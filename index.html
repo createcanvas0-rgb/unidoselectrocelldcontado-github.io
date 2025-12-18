@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIDOS ELECTROCELL | Celulares sin Reporte</title>
+    <!-- Carga de Tailwind CSS ESTEEEEEEESE -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F5F7; /* Fondo más claro y profesional */
+        }
+        /* Paleta de Colores Renovada */
+        .text-primary-red { color: #D6002B; } /* Rojo (Accento) - Ligeramente más serio */
+        .bg-primary-red { background-color: #D6002B; }
+        .text-secondary-blue { color: #0069D9; } /* Azul (Principal) - Más sobrio */
+        .bg-secondary-blue { background-color: #0069D9; }
+        
+        /* Nuevos Colores para el Hero Section (Ajustado al AZUL MÁS VIVO de la última imagen) */
+        .bg-hero-blue { background-color: #0070E0; } /* Azul Primario Vivo y Brillante */
+        .text-highlight-yellow { color: #FFD700; } /* Amarillo Brillante para el Acento */
+
+        /* Estilos de Sombra Premium */
+        .card-shadow-premium { 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Estilos de Tarjeta de Producto Dinámica */
+        .product-card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid #E9ECEF;
+        }
+        .product-card:hover {
+            transform: translateY(-8px); /* Mayor elevación */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Sombra más dramática */
+        }
+        /* Estilo para el botón de WhatsApp */
+        .whatsapp-button {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Encabezado Fijo (Header) - Mejor Contraste y Sombra -->
+   <header class="sticky top-0 bg-white shadow-2xl shadow-gray-300 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+
+        <!-- Logo + Texto -->
+        <div class="flex items-center gap-4">
+            <img src="imagenes/Logo.jpeg" alt="Logo UNIDOS ELECTROCELL" class="h-10 sm:h-12 rounded-lg object-contain">
+
+            <div class="hidden sm:flex flex-col leading-tight">
+                <span class="text-blue-700 font-extrabold text-base">Seguro</span>
+                <span class="text-red-600 font-semibold text-sm">Rápido y Confiable</span>
+            </div>
+        </div>
+
+        <!-- Texto Central -->
+        <div class="hidden sm:block text-center flex-1">
+            <a href="https://wa.me/573022162165" target="_blank" class="text-blue-700 font-extrabold text-lg hover:underline">
+                Atención inmediata: <span class="text-red-600">302 216 2165</span>
+            </a>
+        </div>
+
+        <!-- Carrito + Botón -->
+        <div class="flex items-center space-x-4">
+
+            <!-- Carrito FUNCIONAL -->
+            <button id="cart-button" class="relative text-gray-700 hover:text-primary-red transition duration-300 p-2 rounded-full hover:bg-gray-100">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+
+                <!-- Contador del Carrito -->
+                <span id="cart-count"
+                    class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-primary-red rounded-full">
+                    0
+                </span>
+            </button>
+
+            <!-- Botón Ver Equipos -->
+            <a href="#productos"
+                class="bg-primary-red text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                Ver Equipos
+            </a>
+        </div>
+
+    </div>
+</header>
+
+    <!-- El contenedor principal ahora es de ancho completo para el Hero -->
+    <main class="mx-auto"> 
+        
+        <!-- Sección Principal de Venta (Hero) -->
+        <section class="bg-hero-blue text-white py-20 sm:py-32 mb-10 card-shadow-premium">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <!-- Título Principal -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 leading-snug tracking-tight">
+                    Celulares de la Mayor Calidad <span class="text-highlight-yellow">¡Telefonos de Contado!</span>
+                </h1>
+                
+                <!-- Subtítulo / Llamada a la Acción Secundaria -->
+                <p class="text-xl sm:text-2xl font-light max-w-4xl mx-auto mb-12 opacity-90">
+                    Solicita el tuyo con <span class="font-black text-white">Encuentra lo ultimo</span> en tecnología.
+                </p>
+
+                <!-- Botón Principal -->
+                <a href="#productos" class="inline-flex items-center bg-primary-red text-white py-4 px-10 rounded-xl font-bold text-lg shadow-2xl shadow-red-600/70 hover:bg-red-700 transition duration-300 transform hover:scale-105 uppercase tracking-wider">
+                    VER CATÁLOGO Y PRECIOS AHORA ↓
+                </a>
+            </div>
+        </section>
+
+        <!-- Título "Nuestros Modelos Disponibles" -->
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <h2 class="text-3xl font-black text-center text-gray-800 mb-8">
+                Nuestros Modelos Disponibles
+            </h2>
+        </div>
+
+
+
+
+
+        
+
+      
+        
+        <!-- Sección de Productos -->
+        <section id="productos" class="max-w-7xl mx-auto px-4 mb-20">
+            <!-- Contenedor principal de tarjetas en Grid -->
+            <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Las tarjetas de producto serán inyectadas aquí por JavaScript -->
+            </div>
+        </section>
+        
+        
+
+
+
+        <!-- Llamada a la Acción Final - Se mantiene el original, pero el texto dirige a la acción general -->
+        <section class="max-w-7xl mx-auto px-4">
+            <div class="bg-secondary-blue p-12 rounded-3xl text-center card-shadow-premium">
+                <h3 class="text-3xl font-extrabold text-white mb-4">¿Tienes dudas o quieres solicitar tu equipo?</h3>
+                <p class="text-xl text-white opacity-90 max-w-3xl mx-auto mb-10">
+                    Contáctanos directamente para un proceso rápido, seguro y transparente.
+                </p>
+                <!-- Este botón usa el link de contacto general (Se mantiene la funcionalidad original) -->
+                <a  href="https://wa.me/573022162165?text=Hola,%20quisiera%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20obtener%20un%20celular%20a%C2%A0cr%C3%A9dito%20sin%20estar%20reportado."
+                target="_blank"
+                class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-12 rounded-full text-xl shadow-2xl shadow-green-500/60 transform hover:scale-105 hover:shadow-green-600/80 transition duration-300 whatsapp-button uppercase tracking-wide">
+
+              <!-- COHETE ANIMADO 🚀 -->
+              <span class="text-3xl mr-3 animate-bounce">🚀</span>
+
+               CHATEA AHORA
+                   </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página - Más sutil y profesional -->
+    <footer class="bg-gray-900 text-gray-300 p-8 text-center mt-16">
+    <p class="mb-3 font-light text-sm">
+        &copy; 2024 UNIDOS ELECTROCELL. Soluciones móviles con respaldo y confianza.
+    </p>
+    <p class="text-base font-semibold">
+        WhatsApp de Atención Directa: 
+        <span class="text-green-400">+57 302 216 2165</span>
+    </p>
+    <p class="text-base font-semibold mt-2">
+        Ubicación:
+        <span class="text-blue-400">Sahagún, Córdoba - Colombia</span>
+    </p>
+    <p class="text-base font-semibold mt-2">
+        Correo Corporativo:
+        <span class="text-yellow-300">unidoselectrocell@gmail.com</span>
+    </p>
+    <p class="text-sm mt-4 text-gray-500">
+        Atención personalizada, procesos rápidos y aprobación sin complicaciones.
+    </p>
+</footer>
+
+
+
+    <!-- Modal del Carrito (Mini-Ventana) - NUEVA ESTRUCTURA -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[99] hidden items-center justify-center p-4" onclick="closeCartModal(event)">
+        <div class="bg-white rounded-xl w-full max-w-md lg:max-w-xl card-shadow-premium transform transition-all duration-300" onclick="event.stopPropagation()">
+            <!-- Contenido del Modal -->
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                   <h3 class="text-2xl font-extrabold text-gray-900 flex items-center">
+                  <span class="text-3xl mr-2">🛒</span>
+                  Tu Carrito 
+                  </h3>
+                    <button onclick="closeCartModal()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Lista de Productos en el Carrito -->
+                <div id="cart-items-container" class="max-h-80 overflow-y-auto pr-2 space-y-4">
+                    <!-- Los items del carrito se renderizarán aquí -->
+                </div>
+                
+                <!-- Resumen y Total -->
+                <div class="mt-6 pt-4 border-t-2 border-primary-red/50">
+                    <div class="flex justify-between items-center font-bold text-lg mb-2 text-gray-800">
+                        <span>Total de Productos:</span>
+                        <span id="modal-total-items" class="text-xl">0</span>
+                    </div>
+                    <div class="flex justify-between items-center font-extrabold text-2xl text-primary-red mb-6">
+                        <span>Total Inicial:</span>
+                        <span id="modal-initial-total">$0</span>
+                    </div>
+
+                    <!-- Botón Final de Contacto por WhatsApp (Enlace generado dinámicamente) -->
+                    <a id="modal-whatsapp-link" 
+                       target="_blank"
+                      class="whatsapp-button w-full inline-flex justify-center items-center bg-green-500 hover:bg-green-600 text-white font-extrabold py-3.5 rounded-lg text-lg shadow-xl shadow-green-500/40 transition duration-300 transform hover:scale-[1.01] uppercase tracking-wide">
+
+                      <!-- Emoji 💬 reemplazando el icono SVG -->
+                      <span class="text-2xl mr-2">💬</span>
+
+                       SOLICITAR ESTOS EQUIPOS
+                          </a> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // DATOS y LÓGICA DE PRODUCTOS
+        const products = [
+  // SAMSUNG
+{ brand: 'SAMSUNG', name: 'A05 4/64 GB', initial: 340000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/samsunga05.jpg', description: 'Potencia y rendimiento diario. Perfecto para redes sociales y multitarea sin límites.' },
+{ brand: 'SAMSUNG', name: 'A06 4/128 GB', initial: 390000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/a06.jpeg', description: 'Más almacenamiento para tus fotos y videos. La mejor relación calidad-precio en su gama.' },
+{ brand: 'SAMSUNG', name: 'A07 4/128 GB', initial: 500000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/a07.jpg', description: 'Pantalla vibrante y batería que dura todo el día. Ideal para entretenimiento y trabajo.' },
+{ brand: 'SAMSUNG', name: 'A16 6/128 GB', initial: 550000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/a16.jpg', description: '6 GB de RAM para fluidez extrema. Juega y navega sin interrupciones molestas.' },
+{ brand: 'SAMSUNG', name: 'A16 8/256 GB', initial: 720000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/a168256.jpg', description: 'La versión premium para los que necesitan el máximo rendimiento y espacio.' },
+{ brand: 'SAMSUNG', name: 'A17 6/128 GB', initial: 700000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/a176128.jpg', description: 'Cámara mejorada y diseño elegante.' },
+
+// XIAOMI / REDMI
+{ brand: 'XIAOMI', name: 'REDMI NOTE 14 6/128 GB', initial: 650000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/note146128.jpg', description: 'La leyenda de la gama media.' },
+{ brand: 'XIAOMI', name: 'REDMI NOTE 14 8/256 GB', initial: 700000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/note148256.jpg', description: 'Potencia PRO para los más exigentes.' },
+{ brand: 'XIAOMI', name: 'REDMI NOTE 14 PRO 8/256 GB', initial: 935900, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/14pro8256.jpg', description: 'Pantalla AMOLED y cámara premium.' },
+{ brand: 'XIAOMI', name: 'REDMI 15C 4/128 GB', initial: 450000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/15c8128.jpg', description: 'Balance ideal entre cámara y batería.' },
+{ brand: 'XIAOMI', name: 'REDMI 15C 4/256 GB', initial: 500000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/15c4256.jpg', description: 'Más espacio para todo.' },
+{ brand: 'XIAOMI', name: 'REDMI 15 6/128 GB', initial: 600000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/redmia15.jpg', description: 'Excelente rendimiento general.' },
+
+// MOTOROLA
+{ brand: 'MOTOROLA', name: 'MOTO G15 4/128 GB', initial: 500000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/g154128.jpg', description: 'Android puro y batería duradera.' },
+{ brand: 'MOTOROLA', name: 'MOTO G15 4/256 GB', initial: 500000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/motog155.jpg', description: 'Más almacenamiento, mismo poder.' },
+{ brand: 'MOTOROLA', name: 'MOTO G35', initial: 620000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/g354256.jpg', description: 'Rendimiento sólido.' },
+{ brand: 'MOTOROLA', name: 'MOTO G05 4/128 GB', initial: 410000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/g05418.jpg', description: 'Sencillo y eficiente.' },
+{ brand: 'MOTOROLA', name: 'MOTO G54 256 GB', initial: 720000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/g545g256.jpg', description: '5G y alto rendimiento.' },
+
+// TECNO
+{ brand: 'TECNO', name: 'TECNO SPARK GO 2', initial: 400000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/go4128.jpg', description: 'Económico y funcional.' },
+{ brand: 'TECNO', name: 'TECNO CAMON 40', initial: 800000, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/camonnormal256.jpg', description: 'Fotografía avanzada.' },
+{ brand: 'TECNO', name: 'TECNO CAMON 40 PRO', initial: 1055900, installment: 0, color: 'text-primary-red', imageUrl: 'imagenes/camon256.jpg', description: 'Potencia total.' },
+
+// INFINIX
+{ brand: 'INFINIX', name: 'INFINIX 128 GB', initial: 400000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/smart104128.jpg', description: 'Accesible y confiable.' },
+{ brand: 'INFINIX', name: 'INFINIX 256 GB', initial: 500000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/samart104256.jpg', description: 'Más espacio y fluidez.' },
+{ brand: 'INFINIX', name: 'INFINIX SMART 10 3/64 GB', initial: 370000, installment: 0, color: 'text-secondary-blue', imageUrl: 'imagenes/smart3mas364.jpg', description: 'Ideal para empezar.' },
+        ];
+        
+        // --- LÓGICA DEL CARRITO (NUEVO) ---
+
+        // Variables de estado del carrito
+        let cart = []; // Almacena objetos: { product: {...}, quantity: 1 }
+        const whatsappNumber = '573022162165';
+
+        // Referencias del DOM
+        const cartModal = document.getElementById('cart-modal');
+        const cartCountSpan = document.getElementById('cart-count');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const modalTotalInitial = document.getElementById('modal-initial-total');
+        const modalTotalItems = document.getElementById('modal-total-items');
+        const modalWhatsappLink = document.getElementById('modal-whatsapp-link');
+
+
+        // Función para formatear números como moneda COP (ej: $100.000)
+        const formatCurrency = (number) => {
+            return new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 0
+            }).format(number).replace('COP', '$').trim();
+        };
+
+        // Función para crear la URL de WhatsApp (para producto individual)
+        const createWhatsappUrl = (productName) => {
+            const encodedText = encodeURIComponent(`¡Hola UNIDOS ELECTROCELL! Estoy listo/a para llevarme el ${productName}  . `);
+            return `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+        };
+
+        // Calcula los totales del carrito
+        const calculateCartTotals = () => {
+            let totalInitial = 0;
+            let totalItems = 0;
+
+            cart.forEach(item => {
+                totalInitial += item.product.initial * item.quantity;
+                totalItems += item.quantity;
+            });
+
+            return { totalInitial, totalItems };
+        };
+        
+        // Abre el modal del carrito
+        const openCartModal = () => {
+            renderCartModal();
+            cartModal.style.display = 'flex';
+        };
+
+        // Cierra el modal del carrito
+        const closeCartModal = (event) => {
+            // Solo cerrar si el clic es fuera del modal (el fondo) o si se presiona el botón de cerrar
+            if (event === undefined || event.target.id === 'cart-modal' || event.target.closest('button')?.onclick?.toString().includes('closeCartModal')) {
+                cartModal.style.display = 'none';
+            }
+        };
+
+        // Actualiza la cantidad de un item en el carrito
+        window.updateQuantity = (index, delta) => {
+            if (cart[index]) {
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    // Eliminar el producto si la cantidad llega a cero
+                    cart.splice(index, 1);
+                }
+            }
+            renderCartModal();
+        };
+
+        // Agrega un producto al carrito
+        const addToCart = (product) => {
+            const existingItem = cart.find(item => item.product.name === product.name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ product: product, quantity: 1 });
+            }
+
+            // Actualizar y abrir la mini-ventana
+            renderCartModal();
+            openCartModal(); 
+        };
+
+        // Renderiza el contenido del modal del carrito
+        const renderCartModal = () => {
+            const { totalInitial, totalItems } = calculateCartTotals();
+            
+            // 1. Actualizar el contador del header
+            cartCountSpan.textContent = totalItems;
+            
+            // 2. Si el carrito está vacío
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center text-gray-500 py-4 font-medium">El carrito está vacío. ¡Agrega tu primer celular!</p>';
+                modalTotalInitial.textContent = formatCurrency(0);
+                modalTotalItems.textContent = 0;
+                modalWhatsappLink.classList.add('opacity-50', 'pointer-events-none');
+                return;
+            }
+            
+            // 3. Actualizar el resumen del modal
+            modalTotalInitial.textContent = formatCurrency(totalInitial);
+            modalTotalItems.textContent = totalItems;
+            modalWhatsappLink.classList.remove('opacity-50', 'pointer-events-none');
+            
+            // 4. Generar el mensaje de WhatsApp multi-producto
+            let whatsappMessage = "¡Hola UNIDOS ELECTROCELL! Quiero solicitar informacción para los siguientes equipos:\n\n";
+            cart.forEach(item => {
+                whatsappMessage += `- ${item.product.name} (x${item.quantity}) - Inicial: ${formatCurrency(item.product.initial * item.quantity)}\n`;
+            });
+            whatsappMessage += `\nTotal Inicial Estimado: ${formatCurrency(totalInitial)}. ¡Acepto las condiciones y sé que no importa si estoy reportado!`;
+            
+            modalWhatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // 5. Renderizar los items en el contenedor
+            cartItemsContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'flex items-center space-x-4 p-3 bg-gray-50 rounded-lg shadow-sm';
+                
+                itemDiv.innerHTML = `
+                    <img src="${item.product.imageUrl}" alt="${item.product.name}" class="w-12 h-12 object-contain rounded-md border">
+                    <div class="flex-grow">
+                        <p class="font-semibold text-base text-gray-900 truncate">${item.product.name}</p>
+                        <p class="text-sm text-gray-500">Inicial x${item.quantity}: <span class="font-bold text-primary-red">${formatCurrency(item.product.initial * item.quantity)}</span></p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="updateQuantity(${index}, -1)" class="text-gray-500 hover:text-primary-red p-1 rounded-full bg-white border border-gray-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <span class="font-medium text-sm w-4 text-center">${item.quantity}</span>
+                        <button onclick="updateQuantity(${index}, 1)" class="text-gray-500 hover:text-primary-red p-1 rounded-full bg-white border border-gray-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v8a1 1 0 11-2 0V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+        };
+
+
+        // --- INICIALIZACIÓN DEL DOM ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const productListContainer = document.getElementById('product-list');
+            let currentBrand = '';
+
+            // 1. Renderizar las tarjetas de producto
+            products.forEach(product => {
+                // Separador de Marca
+                if (product.brand !== currentBrand) {
+                    currentBrand = product.brand;
+                    const brandHeader = document.createElement('h3');
+                    brandHeader.className = `col-span-1 md:col-span-2 lg:col-span-3 text-xl sm:text-2xl font-black text-center ${product.color} pt-10 pb-4 mt-8 mb-4 border-b-2 border-gray-200 tracking-widest uppercase`;
+                    brandHeader.textContent = `${currentBrand} | GAMA DISPONIBLE`;
+                    productListContainer.appendChild(brandHeader);
+                }
+
+                // Crear la tarjeta de producto
+                const card = document.createElement('div');
+                card.className = 'product-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col card-shadow-premium';
+                
+                // Contenido de la tarjeta (incluye los 2 botones nuevos)
+                const content = `
+                    <!-- Contenedor de Imagen -->
+                    <div class="h-48 bg-gray-50 p-4 flex items-center justify-center overflow-hidden">
+                        <img src="${product.imageUrl}" 
+                             alt="Teléfono celular ${product.name}" 
+                             class="object-contain w-full h-full transform transition duration-500 hover:scale-105"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/E9ECEF/333333?text=UNIDOS+ELECTROCELL';"
+                        >
+                    </div>
+                    
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <!-- Nombre y Descripción -->
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-primary-red mb-1">${product.brand}</p>
+                            <h4 class="text-2xl font-extrabold text-gray-900 mb-2 leading-snug">${product.name}</h4>
+                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">${product.description}</p>
+                        </div>
+
+                        <!-- Detalles de Pago - Jerarquía y Colores -->
+                        <div class="mt-auto pt-4 border-t border-gray-200">
+                            <div class="flex justify-between items-end mb-5">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500 uppercase"> Precio</p>
+                                    <p class="text-2xl font-black text-green-600 tracking-wide">${formatCurrency(product.initial)}</p>
+                               ${product.installment > 0 ? `
+<div class="text-right">
+    <p class="text-xs font-semibold text-gray-500 uppercase">12 Cuotas Quincenales</p>
+    <p class="text-xl font-bold text-secondary-blue tracking-wide">
+        ${formatCurrency(product.installment)}
+    </p>
+</div>
+` : ''}
+                            
+                            <!-- Botones Carrito + WhatsApp (NUEVOS BOTONES) -->
+                            <div class="space-y-3">
+                                <!-- Botón de Agregar al Carrito (Primario para la nueva función) -->
+                                
+                                 <button data-product-name="${product.name}" 
+                                 class="add-to-cart-btn w-full inline-flex justify-center items-center bg-secondary-blue hover:bg-blue-700 text-white font-bold py-3.5 rounded-lg text-lg shadow-xl shadow-blue-500/40 transition duration-300 transform hover:scale-[1.01] uppercase">
+                                 <span class="text-2xl mr-2">🛒</span> AGREGAR AL CARRITO
+                                </button>
+
+                                <!-- Botón de WhatsApp original (para comprar solo este equipo) -->
+                                <a 
+                                  href="${createWhatsappUrl(product.name)}"
+                                  target="_blank"
+                                  class="whatsapp-button w-full inline-flex justify-center items-center 
+                                  bg-green-500 hover:bg-green-600 
+                                  text-white font-bold py-3.5 rounded-lg text-lg 
+                                  shadow-xl shadow-green-500/40 
+                                   transition duration-300 transform hover:scale-[1.01] uppercase">
+
+                          <!-- Ícono de rayo ⚡ -->
+                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13 2L3 14h7v8l10-12h-7z"/>
+                             </svg>
+                             LO QUIERO YA                               
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                card.innerHTML = content;
+                productListContainer.appendChild(card);
+
+                // 2. Adjuntar evento de 'Agregar al Carrito'
+                const addToCartBtn = card.querySelector('.add-to-cart-btn');
+                if (addToCartBtn) {
+                    addToCartBtn.addEventListener('click', () => {
+                        addToCart(product);
+                    });
+                }
+            });
+            
+            // 3. Adjuntar evento al botón de carrito del header
+            document.getElementById('cart-button').addEventListener('click', openCartModal);
+            
+            // Inicializar el contador del carrito al cargar
+            renderCartModal();
+        });
+    </script>
+    
+</body>
+</html>
